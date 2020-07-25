@@ -12,8 +12,8 @@ steps:
 
 - task: SonarCloudPrepare@1
   inputs:
-    SonarCloud: 'eider_sonar_cloud'
-    organization: 'eidermauricio'
+    SonarCloud: 'sonar_cloud_demo'
+    organization: 'junior47895'
     scannerMode: 'Other'
 
 - task: Maven@3
@@ -27,7 +27,7 @@ steps:
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     sonarQubeRunAnalysis: true
     goals: 'install'
-
+    
 - task: SonarCloudPublish@1
   inputs:
     pollingTimeoutSec: '300'
